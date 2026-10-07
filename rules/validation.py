@@ -1,6 +1,8 @@
 from engine.board import board
 from config import get_white_to_move, empty_cell
 
+def new_func(x: int):
+    return 2 * x
 
 def is_nobody_on_the_path(move_from: tuple[int], move_to: tuple[int]):
     move_from_y = move_from[0]
