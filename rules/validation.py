@@ -1,6 +1,8 @@
 from engine.board import board
 from config import white_to_move, empty_cell
 
+def new_func(x: int):
+    return 2 * x
 
 def is_move_legal(move_from: tuple[int], move_to: tuple[int]) -> bool:
     move_from_y = move_from[0]
