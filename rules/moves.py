@@ -1,4 +1,4 @@
-from config import white_to_move, bukvi, chiferki, letter_to_index
+from config import white_to_move, bukvi, chiferki, letter_to_index, quiting_on
 
 
 def transform_user_data(got_from_user: list[str]):
@@ -10,15 +10,15 @@ def transform_user_data(got_from_user: list[str]):
 def get_move_from_user():
     print(f"Сейчас ходят: {"белые" if white_to_move else "черные"}\n")
     got_from_user = input("Ввод: ")
-    print(f"{got_from_user=}")
-    print(bool(got_from_user))
-    print("\n")
-    if got_from_user == "выход":
+    # print(f"{got_from_user=}")
+    # print(bool(got_from_user))
+    # print("\n")
+    if got_from_user in quiting_on:
         return False, got_from_user
     if not got_from_user:
         return False, None
 
-    got_from_user = got_from_user.split()
+    got_from_user = got_from_user.upper().split()
 
     if len(got_from_user) != 2 or \
             len(got_from_user[0]) != 2 or \

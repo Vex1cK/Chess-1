@@ -13,6 +13,7 @@ white_to_move = True
 bukvi = ["A", "B", "C", "D", "E", "F", "G", "H"]
 chiferki = list(map(str, range(1, 9)))
 empty_cell = "  "
+quiting_on = ["выход", "quit", '-']
 
 letter_to_index = {
     "A": 0,
@@ -24,3 +25,12 @@ letter_to_index = {
     "G": 6,
     "H": 7
 }
+
+def change_moving_color():
+    global white_to_move
+    white_to_move = not white_to_move
+    print(f"Changed: white_to_move now equal {white_to_move}")
+
+def get_white_to_move():
+    global white_to_move
+    return white_to_move
